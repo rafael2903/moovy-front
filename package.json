@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@fontsource-variable/lora": "^5.0.18",
     "@fontsource/roboto": "^5.0.13",
-    "@mui/icons-material": "^5.15.20",
-    "@mui/material": "^5.15.20",
+    "@mui/icons-material": "^5.15.21",
+    "@mui/material": "^5.15.21",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "axios": "^1.7.2",
     "lodash.throttle": "^4.1.1",

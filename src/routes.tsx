@@ -1,22 +1,29 @@
-import { LoginPage, NotFoundPage, RegisterPage } from 'pages'
-import { createBrowserRouter } from 'react-router-dom'
 import { Header } from 'components'
+import { useUser } from 'hooks/useUser'
+import {
+    LibraryPage,
+    LoginPage,
+    NotFoundPage,
+    RegisterPage,
+    SearchPage,
+} from 'pages'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 
-// const AuthRoute = ({ children }) => {
-//     const { user } = useUser()
-//     if (!user) {
-//         return <Navigate to='/entrar' />
-//     }
-//     return children
-// }
+const AuthRoute = ({ children }) => {
+    const { user } = useUser()
+    if (!user) {
+        return <Navigate to='/login' />
+    }
+    return children
+}
 
-// const GuestRoute = ({ children }) => {
-//     const { user } = useUser()
-//     if (user) {
-//         return <Navigate to='/' />
-//     }
-//     return children
-// }
+const GuestRoute = ({ children }) => {
+    const { user } = useUser()
+    if (user) {
+        return <Navigate to='/' />
+    }
+    return children
+}
 
 export const router = createBrowserRouter([
     {
@@ -25,23 +32,34 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                // element: <Home />,
-                element: <h1>Hello World</h1>,
+                element: (
+                    <AuthRoute>
+                        <LibraryPage />
+                    </AuthRoute>
+                ),
             },
             {
                 path: 'login',
                 element: (
-                    // <GuestRoute>
-                    <LoginPage />
-                    // </GuestRoute>
+                    <GuestRoute>
+                        <LoginPage />
+                    </GuestRoute>
                 ),
             },
             {
                 path: 'register',
                 element: (
-                    // <GuestRoute>
-                    <RegisterPage />
-                    // </GuestRoute>
+                    <GuestRoute>
+                        <RegisterPage />
+                    </GuestRoute>
+                ),
+            },
+            {
+                path: 'search',
+                element: (
+                    <AuthRoute>
+                        <SearchPage />
+                    </AuthRoute>
                 ),
             },
         ],

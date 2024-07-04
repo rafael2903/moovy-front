@@ -7,7 +7,6 @@ export const StyledButton = styled.input.attrs({
     background-color: ${({ theme, destructive }) => {
         return destructive ? theme.colors.destructive : theme.colors.primary
     }};
-    /* width: 100%; */
     color: #fff;
     border: none;
     border-radius: 2rem;

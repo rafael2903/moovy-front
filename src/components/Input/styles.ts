@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
     width: 100%;
@@ -18,12 +18,11 @@ export const Container = styled.div`
         text-align: left;
         margin-bottom: 0.8rem;
         font-size: 1.4rem;
-        /* font-weight: bold; */
         color: ${({ theme }) => theme.colors.textSoft};
-
     }
 
-    ::placeholder, :disabled {
+    ::placeholder,
+    :disabled {
         color: ${({ theme }) => theme.colors.textLight};
     }
 

@@ -1,8 +1,5 @@
 import { createContext, Dispatch, SetStateAction, useState } from 'react'
-import { api } from 'services/api'
 import { User } from 'types/User'
-
-// export const UserContext = createContext({})
 
 export interface UserContextType {
     user: User | undefined
@@ -28,13 +25,11 @@ export default function UserContextProvider({
     const login = (user: User) => {
         setUser(user)
         localStorage.setItem('user', JSON.stringify(user))
-        api.defaults.headers.common['Authorization'] = `${user.token}`
     }
 
     const logout = () => {
         setUser(undefined)
         localStorage.removeItem('user')
-        api.defaults.headers.common['Authorization'] = undefined
     }
 
     return (
