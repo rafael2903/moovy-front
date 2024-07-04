@@ -9,7 +9,7 @@ import {
 } from 'pages'
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
-const AuthRoute = ({ children }) => {
+const AuthRoute = ({ children }: { children: React.ReactNode }) => {
     const { user } = useUser()
     if (!user) {
         return <Navigate to='/login' />
@@ -17,7 +17,7 @@ const AuthRoute = ({ children }) => {
     return children
 }
 
-const GuestRoute = ({ children }) => {
+const GuestRoute = ({ children }: { children: React.ReactNode }) => {
     const { user } = useUser()
     if (user) {
         return <Navigate to='/' />

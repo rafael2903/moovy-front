@@ -17,6 +17,7 @@
     "@mui/icons-material": "^5.15.21",
     "@mui/material": "^5.15.21",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "@types/lodash.throttle": "^4.1.9",
     "axios": "^1.7.2",
     "lodash.throttle": "^4.1.1",
     "notyf": "^3.10.0",

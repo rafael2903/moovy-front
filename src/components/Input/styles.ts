@@ -28,6 +28,5 @@ export const Container = styled.div`
 
     input:focus {
         border-color: ${({ theme }) => theme.colors.primary};
-        box-shadow: ${({ theme }) => theme.shadows.secondary};
     }
 `
