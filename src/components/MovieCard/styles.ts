@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyledMovieCard = styled.div`
     width: 100%;
-    max-width: 40rem;
+    max-width: 30rem;
     padding: 0.8rem;
     background-color: ${({ theme }) => theme.colors.secondary};
 

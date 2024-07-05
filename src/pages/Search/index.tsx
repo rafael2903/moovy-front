@@ -43,13 +43,10 @@ export const SearchPage = () => {
             .finally(() => setIsLoading(false))
     }, [search, page])
 
-    useEffect(() => {
-        setData({ movies: [], totalResults: 0, totalPages: 0 })
-    }, [search])
-
     const throttledSearch = useCallback(throttle(setSearch, 1000), [])
 
     useEffect(() => {
+        setData({ movies: [], totalResults: 0, totalPages: 0 })
         throttledSearch(title)
     }, [title])
 
